@@ -4,20 +4,15 @@ const generateBtn = document.querySelector('#generate')
 var passwordText = document.querySelector("#password")
 function createPass() {
     const length = window.prompt("Enter the length of the password you would like to generate between 8 to 128 characters")
-
-    if (parseInt(length) === false) {
-        window.alert("Enter a number please.")
-        return;
-    }
-
+//checks if length is between 8 and 128
     if (length < 8 || length > 128){
         window.alert("Please enter a number between 8 and 128")
         return;
     }
     let passwordVal = ""
     //options 
+    //runs conditional statement to override the value of the password input that will be randomized
     var upperCase = confirm("Would you like to include uppercase letters?");
-
     if (upperCase === true){
         passwordVal = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     } else {
@@ -73,6 +68,7 @@ function createPass() {
     } else {
         passwordVal = "";
     }
+//runs a loop of the string taken from the total conditional statement in a random order till the length reaches the desire length
     function passwordOutput(){
     outPutVal = ""
     for (var i = 0, n = passwordVal.length; i < length; i++) {
@@ -80,7 +76,8 @@ function createPass() {
     }
     return outPutVal
 }
+//returns the output into value form into #password to display the generated password.
     passwordText.value = passwordOutput()
 }
-    //password generator
+//start function button
 generateBtn.addEventListener("click", createPass)
