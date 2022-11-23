@@ -61,6 +61,8 @@ function createPass() {
         passwordVal = "abcdefghijklmnopqrstuvwxyz~!@#$%^&*()_+-=[]{}|:';,./<>?"
     } else if (upperCase === false && lowerCase === false && numbers === true && specialChar === true) {
         passwordVal = "1234567890~!@#$%^&*()_+-=[]{}|:';,./<>?"
+    }else if (upperCase === false && lowerCase === true && numbers === true && specialChar === false){
+        passwordVal = "abcdefghijklmnopqrstuvwxyz1234567890"
     }else if (upperCase === false && lowerCase === false && numbers === true && specialChar === false) {
         passwordVal = "1234567890"
     }else if (upperCase === false && lowerCase === false && numbers === false && specialChar === true) {
